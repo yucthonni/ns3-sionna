@@ -113,6 +113,11 @@ Examples
 
 All examples can be found [here](./examples/).
 
+Usage in HPC cluster
+============
+
+See [here](singularity_howto.md)
+
 Current limitations
 ========
 * SISO only
