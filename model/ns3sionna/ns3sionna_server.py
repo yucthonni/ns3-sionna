@@ -243,7 +243,7 @@ class SionnaEnv:
         nodes_to_update = list(self.node_info.keys())
 
         # compute look-ahead
-        look_ahead = math.floor(self.rt_max_parallel_links / (len(nodes_to_update) - 1))
+        look_ahead = math.floor(self.sub_mode / (len(nodes_to_update) - 1))
 
         print(f'compute CFR to #RX={len(nodes_to_update) - 1} with LAH={look_ahead}')
 
@@ -383,7 +383,7 @@ class SionnaEnv:
             Tc_p2mp_lah.append(Tc_p2mp)
             csi.end_time = csi.start_time + Tc_p2mp - 1 # -1ns to have non-overlapping intervals
 
-        print(f'{self.sim_time / 1e9}s: Computed CSI with Tc: {round(np.asarray(Tc_p2mp_lah) / 1e6,2)}ms, #links: {num_computed_lnks}')
+        print(f'{self.sim_time / 1e9}s: Computed CSI with Tc: {np.round(np.asarray(Tc_p2mp_lah) / 1e6,2)}ms, #links: {num_computed_lnks}')
 
 
     def _place_tx_rx_nodes_with_lah(self, lah_time_vec: list, tx_node: int, rx_nodes: list):

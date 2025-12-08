@@ -6,7 +6,7 @@ cd ../../../
 hostname
 lscpu | grep "Model name"
 
-MODE=1
+MODE=2
 NUM_RES=16
 NUM_STAS=32
 
