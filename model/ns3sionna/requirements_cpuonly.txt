@@ -6,6 +6,7 @@ protobuf
 tensorflow
 pyzmq
 gputil
+millify
 
 # optional for plotting
 matplotlib
