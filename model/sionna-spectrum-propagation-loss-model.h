@@ -62,6 +62,7 @@ class SionnaSpectrumPropagationLossModel : public SpectrumPropagationLossModel
                                                     Ptr<const MobilityModel> b) const override;
 
     Ptr<SionnaPropagationCache> m_propagationCache;
+    int64_t DoAssignStreams(int64_t stream) override;
 };
 
 } // namespace ns3

@@ -149,5 +149,19 @@ SionnaSpectrumPropagationLossModel::DoCalcRxPowerSpectralDensity(Ptr<const Spect
 
     return rxPsd;
 }
+int64_t
+SionnaSpectrumPropagationLossModel::DoAssignStreams(int64_t stream)
+{
+    // 这个函数用于为随机变量分配流（stream），以确保可重复的随机数序列。
+    // 如果你在这个类中使用了随机变量（例如，通过 ns3::RandomVariableStream），
+    // 你需要在这里为它们分配流，并返回分配的数量。
 
+    // 例如：
+    // int64_t currentStream = stream;
+    // currentStream += m_myRandomVariable->AssignStreams(currentStream);
+    // return (currentStream - stream);
+
+    // 如果你目前没有使用任何随机变量，可以简单地返回 0。
+    return 0;
+}
 } // namespace ns3
